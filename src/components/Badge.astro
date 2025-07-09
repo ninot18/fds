@@ -1,0 +1,11 @@
+---
+// src/components/Badge.astro
+export interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<img src={src} alt={alt} class="w-24 rounded-2xl" loading="lazy" />

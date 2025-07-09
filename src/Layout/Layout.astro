@@ -1,0 +1,46 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "./src/styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>{ title }</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={ title } />
+    <meta
+      property="og:description"
+      content="Anything, Anywhere. On Time."
+    />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://remoteready.work" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="A Global Device Delivery" />
+    <meta name="twitter:title" content={ title } />
+    <meta
+      name="twitter:description"
+      content="Anything, Anywhere. On Time."
+    />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+
+    <ClientRouter />
+
+  </head>
+
+  <body>
+    <slot />
+  </body>
+
+</html>
